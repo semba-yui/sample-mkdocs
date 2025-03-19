@@ -29,3 +29,6 @@ neoteroi-mkdocs = "^1.1.0"
 [tool.poetry.scripts]
 serve = "mkdocs:serve"
 build = "mkdocs:build"
+
+[tool.poetry.requires-plugins]
+poetry-plugin-export = ">=1.8"
