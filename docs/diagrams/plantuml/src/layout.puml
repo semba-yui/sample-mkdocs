@@ -1,0 +1,9 @@
+' PlantUML Common Layout
+
+header
+    <font color=red>Yui Semba - ドキュメント管理システム </font>
+end header
+
+right footer
+    <b>Copyright © Yui Semba. All rights reserved.</b>
+end footer

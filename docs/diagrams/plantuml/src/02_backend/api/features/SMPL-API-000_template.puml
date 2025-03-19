@@ -1,0 +1,48 @@
+@startuml SMPL-API-000_template
+
+/' ---------------------------------------------- '/
+!include ../../../layout.puml
+!include ../../../style.puml
+/' ---------------------------------------------- '/
+
+title SMPL-API-000 / 〇〇取得API
+
+Fargate2Participant(BW, "backend-web", "REST Server")
+AuroraParticipant(RDB, "RDB", "MySQL")
+
+-> BW ++ : Request
+
+    ref over BW : 認証処理（JWT Token）
+
+    BW -> BW : バリデーション
+
+    opt バリデーションエラーの場合
+        <-- BW : 400 Bad Request
+    end
+
+    ' トランザクション範囲を明確にする
+    group トランザクション
+
+        BW -> API ++ : 外部 API の呼び出しがある場合記載
+        note right
+            エンドポイントを記載
+        end note
+        return
+
+        BW -> RDB ++ : insert | select | update | delete
+        note right
+            テーブル名を記載
+            end note
+        return
+
+        opt 業務チェック
+            BW -> BW : 業務チェック
+
+            <-- BW : エラーの場合返却するステータスコードを記載
+        end
+
+    end
+
+return 200 OK
+
+@enduml

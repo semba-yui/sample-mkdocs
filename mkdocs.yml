@@ -1,0 +1,78 @@
+# ナビゲーション設定(nav)
+nav:
+  - ホーム: index.md
+  - 共通:
+    - プロジェクト概要: 00_common/project-overview.md
+    - 機能:
+      - 機能概要: 00_common/features/index.md
+      - 000_テンプレ機能: 00_common/features/000_template.md
+  - フロントエンド:
+    - 概要: 01_frontend/overview.md
+    - アーキテクチャ: 01_frontend/architecture.md
+    - 画面遷移図: 01_frontend/screen-transition-diagram.md
+    - UI コンポーネント: 01_frontend/ui-components.md
+  - バックエンド:
+    - 概要: 02_backend/overview.md
+    - アーキテクチャ: 02_backend/architecture.md
+    - API: 02_backend/api/index.md
+  - インフラ:
+    - 概要: 03_infrastructure/overview.md
+
+# サイト名
+site_name: サンプルプロジェクト仕様書
+copyright: "Copyright © Yui Semba. All rights reserved."
+
+# リポジトリ指定
+repo_url: https://github.com/semba-yui/sample-docs
+repo_name: GitHub
+
+# テーマ設定(theme)
+theme:
+  name: 'material'
+  language: ja
+  font:
+    text: Noto Sans JP
+    code: Inconsolata
+  logo: images/logo.png
+  favicon: images/logo.png
+  features:
+    - navigation.sections
+    - content.code.copy
+    - navigation.tracking
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.path
+    - navigation.footer
+    - toc.integrate
+
+docs_dir: docs
+
+plugins:
+  search:
+    lang: 'ja'
+  tags:
+  git-revision-date-localized:
+    enable_creation_date: true
+  mermaid2:
+  drawio-exporter:
+    cache_dir: "drawio-exporter"
+    drawio_executable: null
+    drawio_args: ["--no-sandbox"]
+    format: png
+    embed_format: '<img alt="{img_alt}" src="{img_src}">'
+    sources: "*.drawio"
+  glightbox:
+
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - footnotes
+  - tables
+  - pymdownx.emoji
+
+extra_javascript:
+  - https://unpkg.com/tablesort@5.3.0/dist/tablesort.min.js
+  - javascripts/tablesort.js
+
+extra:
+  generator: false
