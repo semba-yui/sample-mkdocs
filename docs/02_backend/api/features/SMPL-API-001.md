@@ -9,9 +9,7 @@
 
 ## IF 定義
 
-TODO: URL にすること
-
-[OpenAPI](../../interface/open-api/sample-oas.yaml)
+[OpenAPI](https://yui-semba-sample-docs.netlify.app/02_backend/interface/open-api/output/sample-oas.html)
 
 ## シーケンス
 
