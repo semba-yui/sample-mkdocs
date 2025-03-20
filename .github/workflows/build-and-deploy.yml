@@ -1,0 +1,39 @@
+name: Deploy to Netlify
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      # リポジトリのチェックアウト
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      # mise を使った各種バージョン管理ツールのインストール
+      # see: ./mise.toml
+      - uses: jdx/mise-action@v2
+
+      # Python の依存関係インストール（--no-interaction で自動化）
+      - name: Install Python Dependencies with Poetry
+        run: poetry install --no-interaction --no-ansi
+
+      # npm の依存関係インストール
+      - name: Install npm Dependencies
+        run: npm install
+
+      # ReDoc の生成
+      - name: Build ReDoc
+        run: npm run gen-api-spec
+
+      # 設計書の生成
+      - name: Build Documents
+        run: npm run gen-docs
+
+      # Netlify にデプロイ
+      - name: Deploy to Netlify
+        run: netlify deploy --site ${{ secrets.NETLIFY_SITE_ID }} --auth ${{ secrets.NETLIFY_AUTH_TOKEN }} --dir=site --prod
