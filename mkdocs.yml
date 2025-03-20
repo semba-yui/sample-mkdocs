@@ -54,13 +54,6 @@ plugins:
   git-revision-date-localized:
     enable_creation_date: true
   mermaid2:
-  drawio-exporter:
-    cache_dir: "drawio-exporter"
-    drawio_executable: null
-    drawio_args: ["--no-sandbox"]
-    format: png
-    embed_format: '<img alt="{img_alt}" src="{img_src}">'
-    sources: "*.drawio"
   glightbox:
 
 markdown_extensions:
