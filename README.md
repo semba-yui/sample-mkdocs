@@ -52,59 +52,42 @@
 
 ### バージョン管理ツール
 
+このプロジェクトでは以下のバージョンのツールを使用しています。
+
+- Python: 3.13.3
+- Node.js: 23.11.0
+- Java: 21.0.2
+- Poetry: 最新版
+
 #### mise
 
-各種バージョン管理（asdf）
+各種バージョン管理は[mise](https://github.com/jdx/mise)を使用しています。
 
 ```shell
 brew install mise
+```
+
+```shell
 mise install
 ```
 
-#### tbls
+## 開発方法
 
-データベーススキーマ管理
-
-```shell
-brew install tbls
-```
-
-## 開発環境のセットアップ
-
-### 1. 依存関係のインストール
+### ドキュメント開発サーバーを起動
 
 ```shell
-# Python依存関係のインストール
-poetry install
-
-# Node.js依存関係のインストール
-npm install
+npm run docs:serve
 ```
 
-### 2. 開発サーバーの起動
+### OpenAPI モックサーバーを起動
 
 ```shell
-npm run run-docs
+npm run oas:mock
 ```
 
-## 利用可能なコマンド
+## 開発者向けドキュメント
 
-### ドキュメント関連
-
-- `npm run run-docs`: 開発サーバーを起動
-- `npm run gen-docs`: ドキュメントをビルド
-- `npm run lint-docs`: ドキュメントの品質チェック
-
-### OpenAPI関連
-
-- `npm run lint-oas`: OpenAPI仕様書の品質チェック
-- `npm run format-oas`: OpenAPI仕様書のフォーマット
-- `npm run mock`: OpenAPIモックサーバーの起動
-- `npm run gen-api-spec`: OpenAPI仕様書のHTML生成
-
-### 図表関連
-
-- `npm run build-plantuml`: PlantUML図表のビルド
+詳細な開発方法、コマンド一覧、コントリビューション方法については [CONTRIBUTING.md](./CONTRIBUTING.md) を参照してください。
 
 ## デプロイ
 

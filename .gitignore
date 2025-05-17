@@ -277,7 +277,7 @@ venv.bak/
 .ropeproject
 
 # mkdocs documentation
-#/site
+site
 
 # mypy
 .mypy_cache/
@@ -302,11 +302,8 @@ cython_debug/
 # PyPI configuration file
 .pypirc
 
-# MkDocs build output
-site
-
 # MacOS
 .DS_Store
 
-# Specify
-/docs/02_backend/interface/open-api/output/*.html
+# VS Code
+.vscode/
