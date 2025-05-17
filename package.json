@@ -43,7 +43,7 @@
     "@stoplight/spectral-cli": "^6.15.0",
     "husky": "^9.1.7",
     "lint-staged": "^15.5.2",
-    "netlify-cli": "^20.1.1",
+    "netlify-cli": "^21.4.2",
     "openapi-format": "^1.26.0",
     "textlint": "^14.7.1",
     "textlint-filter-rule-allowlist": "^4.0.0",
