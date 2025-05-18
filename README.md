@@ -33,14 +33,12 @@ MkDocs を利用して技術仕様書を管理するサンプルプロジェク�
 │   ├── 02_backend/           # バックエンド関連
 │   │   ├── api/              # API 仕様書
 │   │   ├── batch/            # バッチ処理
-│   │   ├── interface/        # インターフェース仕様書
-│   │   └── rdb/              # データベース仕様書
+│   │   └── interface/        # インターフェース仕様書
 │   ├── 03_infrastructure/    # インフラ関連
 │   ├── 90_appendix/          # 付録
 │   ├── diagrams/             # 図表ファイル
 │   │   ├── drawio/           # Draw.io 図表
 │   │   └── plantuml/         # PlantUML 図表
-│   ├── drawio-exporter/      # Draw.io エクスポーター
 │   ├── images/               # 画像
 │   ├── javascripts/          # JavaScript
 │   └── index.md              # ドキュメントのエントリポイント
