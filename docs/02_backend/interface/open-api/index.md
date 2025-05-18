@@ -5,8 +5,8 @@
 
 - [ReDoc Ver](./out/sample-oas.html)
 - [Stoplight Elements Ver](./html/elements/index.html)
-- [RapiDoc](./html/RapiDoc/index.html)
-- [Swagger UI](./html/swagger-ui/index.html)
+- [RapiDoc Ver](./html/RapiDoc/index.html)
+- [Swagger UI Ver](./html/swagger-ui/index.html)
 
 ## ガイドライン
 
