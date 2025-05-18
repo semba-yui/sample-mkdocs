@@ -2,7 +2,7 @@
 
 [![Dependabot Updates](https://github.com/semba-yui/sample-mkdocs/actions/workflows/dependabot/dependabot-updates/badge.svg)](https://github.com/semba-yui/sample-mkdocs/actions/workflows/dependabot/dependabot-updates)
 
-このプロジェクトは、MkDocsを使用した技術文書管理のサンプルプロジェクトです。
+MkDocs を利用して技術仕様書を管理するサンプルプロジェクトです。
 
 ## 目次
 
@@ -11,50 +11,44 @@
 - [必要条件](#必要条件)
   - [バージョン管理ツール](#バージョン管理ツール)
 - [開発方法](#開発方法)
-  - [ドキュメント開発サーバーを起動](#ドキュメント開発サーバーを起動)
-  - [OpenAPI モックサーバーを起動](#openapi-モックサーバーを起動)
+  - [ドキュメントサーバーの起動](#ドキュメントサーバーの起動)
+  - [OpenAPI モックサーバーの起動](#openapi-モックサーバーの起動)
 - [開発者向けドキュメント](#開発者向けドキュメント)
+- [ライセンス](#ライセンス)
 
 ## 機能
 
-- MkDocs Materialによる美しいドキュメントサイト
-- OpenAPI仕様書の管理とモックサーバー
-- PlantUMLによる図表作成
-- 技術文書の品質管理（textlint）
-- Netlifyへの自動デプロイ
+- MkDocs Material によるドキュメントサイト
+- OpenAPI 仕様書の管理とモックサーバー
+- PlantUML による図表生成
+- textlint を使ったドキュメント品質管理
 
 ## ディレクトリ構成
 
 ```text
 .
-├── docs/                      # ドキュメントのルートディレクトリ
+├── docs/                      # ドキュメントのルート
 │   ├── 00_common/            # 共通ドキュメント
-│   ├── 01_frontend/          # フロントエンド関連ドキュメント
-│   ├── 02_backend/           # バックエンド関連ドキュメント
-│   │   ├── api/              # API仕様書
-│   │   ├── batch/            # バッチ処理仕様書
+│   ├── 01_frontend/          # フロントエンド関連
+│   ├── 02_backend/           # バックエンド関連
+│   │   ├── api/              # API 仕様書
+│   │   ├── batch/            # バッチ処理
 │   │   ├── interface/        # インターフェース仕様書
 │   │   └── rdb/              # データベース仕様書
-│   ├── 03_infrastructure/    # インフラストラクチャ関連ドキュメント
+│   ├── 03_infrastructure/    # インフラ関連
 │   ├── 90_appendix/          # 付録
 │   ├── diagrams/             # 図表ファイル
-│   │   ├── drawio/          # Draw.io図表
-│   │   └── plantuml/        # PlantUML図表
-│   ├── drawio-exporter/      # Draw.ioエクスポーター
-│   ├── images/               # 画像ファイル
-│   ├── javascripts/          # JavaScriptファイル
-│   └── index.md              # ドキュメントのエントリーポイント
-├── site/                     # ビルドされたドキュメントサイト
-├── .github/                  # GitHub関連設定
-├── .netlify/                 # Netlify関連設定
-├── .poetry/                  # Poetry関連設定
-├── .venv/                    # Python仮想環境
-├── node_modules/             # Node.js依存パッケージ
-├── mkdocs.yml               # MkDocs設定ファイル
-├── package.json             # Node.jsプロジェクト設定
-├── poetry.lock              # Poetry依存関係ロックファイル
-├── pyproject.toml           # Pythonプロジェクト設定
-└── README.md                # プロジェクト説明
+│   │   ├── drawio/           # Draw.io 図表
+│   │   └── plantuml/         # PlantUML 図表
+│   ├── drawio-exporter/      # Draw.io エクスポーター
+│   ├── images/               # 画像
+│   ├── javascripts/          # JavaScript
+│   └── index.md              # ドキュメントのエントリポイント
+├── mkdocs.yml                # MkDocs 設定
+├── package.json              # Node.js プロジェクト設定
+├── poetry.lock               # Poetry 依存関係
+├── pyproject.toml            # Python プロジェクト設定
+└── README.md
 ```
 
 ## 必要条件
@@ -71,24 +65,23 @@
 #### mise
 
 各種バージョン管理は[mise](https://github.com/jdx/mise)を使用しています。
+各ツールは次のコマンドでインストール可能です。
 
 ```shell
 brew install mise
-```
-
-```shell
-mise install
+poetry install
+npm install
 ```
 
 ## 開発方法
 
-### ドキュメント開発サーバーを起動
+### ドキュメントサーバーの起動
 
 ```shell
 npm run docs:serve
 ```
 
-### OpenAPI モックサーバーを起動
+### OpenAPI モックサーバーの起動
 
 ```shell
 npm run oas:mock
@@ -96,4 +89,8 @@ npm run oas:mock
 
 ## 開発者向けドキュメント
 
-詳細な開発方法、コマンド一覧、コントリビューション方法については [CONTRIBUTING.md](./CONTRIBUTING.md) を参照してください。
+より詳細な開発手順やコマンドについては [CONTRIBUTING.md](./CONTRIBUTING.md) を参照してください。
+
+## ライセンス
+
+本プロジェクトは [MIT License](LICENSE) の下で公開されています。
