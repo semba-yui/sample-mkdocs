@@ -1,0 +1,5 @@
+!define AWSPuml https://raw.githubusercontent.com/awslabs/aws-icons-for-plantuml/v19.0/dist
+!include <awslib/AWSCommon>
+!include <awslib/AWSSimplified>
+!include <awslib/Compute/Fargate2>
+!include <awslib/Database/Aurora>

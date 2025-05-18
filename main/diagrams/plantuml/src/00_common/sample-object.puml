@@ -1,0 +1,20 @@
+@startuml
+
+/' ---------------------------------------------- '/
+!include ../layout.puml
+!include ../style.puml
+/' ---------------------------------------------- '/
+
+object London
+object Washington
+object Berlin
+object NewYork
+
+map CapitalCity {
+ UK *-> London
+ USA *--> Washington
+ Germany *---> Berlin
+}
+
+NewYork --> CapitalCity::USA
+@enduml

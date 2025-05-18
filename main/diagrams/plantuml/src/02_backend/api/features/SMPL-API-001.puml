@@ -1,0 +1,58 @@
+@startuml SMPL-API-001
+
+/' ---------------------------------------------- '/
+!include ../../../layout.puml
+!include ../../../style.puml
+/' ---------------------------------------------- '/
+
+title SMPL-API-001 / ログインAPI
+
+Fargate2Participant(BW, "backend-web", "REST Server")
+AuroraParticipant(RDB, "RDB", "MySQL")
+
+-> BW ++ : POST /api/v1/auth/login
+
+    BW -> BW : バリデーション
+
+    opt バリデーションエラーの場合
+        <-- BW : 400 Bad Request
+    end
+
+    BW -> RDB ++ : select
+    note right
+        == user
+        end note
+    return ユーザー情報
+
+    BW -> BW : 認証処理
+
+    opt ユーザーが存在しない場合
+        <-- BW : 401 Unauthorized
+    end
+
+    opt アカウントがロックされている場合
+        <-- BW : 401 Unauthorized
+    end
+
+    opt パスワードが一致しない場合
+        BW -> RDB ++ : update
+        note right
+            == user
+            end note
+        return
+        <-- BW : 401 Unauthorized
+    end
+
+    BW -> BW : JWTトークン生成
+
+    BW -> RDB ++ : update
+    note right
+        == user
+        end note
+    return
+
+    BW -> BW : レスポンス作成
+
+return 200 OK
+
+@enduml
