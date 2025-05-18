@@ -3,6 +3,7 @@
 [![Build and Deploy MkDocs per Branch](https://github.com/semba-yui/sample-mkdocs/actions/workflows/build-and-deploy.yml/badge.svg)](https://github.com/semba-yui/sample-mkdocs/actions/workflows/build-and-deploy.yml)
 [![pages-build-deployment](https://github.com/semba-yui/sample-mkdocs/actions/workflows/pages/pages-build-deployment/badge.svg)](https://github.com/semba-yui/sample-mkdocs/actions/workflows/pages/pages-build-deployment)
 [![Dependabot Updates](https://github.com/semba-yui/sample-mkdocs/actions/workflows/dependabot/dependabot-updates/badge.svg)](https://github.com/semba-yui/sample-mkdocs/actions/workflows/dependabot/dependabot-updates)
+[![Ask DeepWiki](https://deepwiki.com/badge.svg)](https://deepwiki.com/semba-yui/sample-mkdocs)
 
 MkDocs を利用して技術仕様書を管理するサンプルプロジェクトです。
 
