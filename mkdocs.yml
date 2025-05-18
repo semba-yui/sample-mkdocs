@@ -9,12 +9,27 @@ nav:
   - フロントエンド:
     - 概要: 01_frontend/overview.md
     - アーキテクチャ: 01_frontend/architecture.md
+    - コーディングガイドライン: 01_frontend/guidelines.md
     - 画面遷移図: 01_frontend/screen-transition-diagram.md
+    - コンポーネント設計: 01_frontend/ui-components.md
     - UI コンポーネント: 01_frontend/ui-components.md
+    - メッセージ: 01_frontend/messages/index.md
   - バックエンド:
     - 概要: 02_backend/overview.md
     - アーキテクチャ: 02_backend/architecture.md
-    - API: 02_backend/api/index.md
+    - IF定義: 02_backend/interface/open-api/index.md
+    - コーディングガイドライン: 02_backend/guidelines.md
+    - API: 
+      - 概要: 02_backend/api/index.md
+      - ログ設計: 02_backend/api/log-messages/index.md
+      - 詳細設計書:
+        - SMPL-API-000 / 〇〇取得API: 02_backend/api/features/SMPL-API-000_template.md
+        - SMPL-API-001 / ログインAPI: 02_backend/api/features/SMPL-API-001.md
+    - BATCH:
+      - 概要: 02_backend/batch/index.md
+      - ログ設計: 02_backend/batch/log-messages/index.md
+      - 詳細設計書:
+        - SMPL-BAT-000 / 〇〇取得BATCH: 02_backend/batch/features/SMPL-BAT-000_template.md
   - インフラ:
     - 概要: 03_infrastructure/overview.md
 

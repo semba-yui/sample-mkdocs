@@ -9,7 +9,7 @@
 
 ## IF 定義
 
-[OpenAPI](../../interface/open-api/index.html)
+[OpenAPI](../../../interface/open-api/)
 
 ## シーケンス
 
