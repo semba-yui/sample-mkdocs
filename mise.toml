@@ -1,5 +1,9 @@
 [tools]
 java = "21.0.2"
-node = "23.9.0"
+node = "23.11.0"
 poetry = {version="latest", pyproject="pyproject.toml"}
-python = "3.13.2"
+python = "3.13.3"
+
+[env]
+ENABLED_GIT_REVISION_DATE = "false"
+ENABLED_GIT_AUTHORS = "false"

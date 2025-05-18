@@ -1,38 +1,52 @@
 {
-  "name": "sample-docs",
+  "name": "sample-mkdocs",
   "version": "1.0.0",
   "description": "サンプル仕様書",
   "directories": {
     "doc": "docs"
   },
   "scripts": {
-    "lint-docs": "textlint docs/**/*.md",
-    "lint-oas": "npx spectral lint ./docs/02_backend/interface/open-api/sample-oas.yaml --ruleset ./docs/02_backend/interface/open-api/.spectral.yaml",
-    "format-oas": "npx openapi-format ./docs/02_backend/interface/open-api/sample-oas.yaml",
-    "mock": "npx prism mock ./docs/02_backend/interface/open-api/sample-oas.yaml",
-    "gen-api-spec": "npx redocly build-docs ./docs/02_backend/interface/open-api/sample-oas.yaml -o ./docs/02_backend/interface/open-api/output/sample-oas.html && npx widdershins ./docs/02_backend/interface/open-api/sample-oas.yaml -o ./docs/02_backend/interface/open-api/README.md",
-    "run-docs": "poetry run mkdocs serve",
-    "gen-docs": "poetry run mkdocs build",
-    "build-plantuml": "cd ./docs/diagrams/plantuml && ./build.sh"
+    "docs:build": "poetry run mkdocs build --clean",
+    "docs:lint": "textlint docs/**/*.md --ignore-path .textlintignore",
+    "docs:serve": "poetry run mkdocs serve",
+    "oas:build": "npx redocly build-docs ./docs/02_backend/interface/open-api/sample-oas.yaml -o ./docs/02_backend/interface/open-api/out/sample-oas.html",
+    "oas:format": "npx openapi-format ./docs/02_backend/interface/open-api/sample-oas.yaml",
+    "oas:lint": "npx spectral lint ./docs/02_backend/interface/open-api/sample-oas.yaml --ruleset ./docs/02_backend/interface/open-api/.spectral.yaml",
+    "oas:mock": "npx prism mock ./docs/02_backend/interface/open-api/sample-oas.yaml",
+    "plantuml:build": "./docs/diagrams/plantuml/build.sh",
+    "prepare": "husky"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/semba-yui/sample-docs.git"
+    "url": "git+https://github.com/semba-yui/sample-mkdocs.git"
   },
-  "author": "",
+  "author": "Yui Semba",
   "bugs": {
-    "url": "https://github.com/semba-yui/sample-docs/issues"
+    "url": "https://github.com/semba-yui/sample-mkdocs/issues"
   },
-  "homepage": "https://github.com/semba-yui/sample-docs#readme",
+  "lint-staged": {
+    "*.{puml,pu}": [
+      "npm run plantuml:build"
+    ],
+    "*-oas3.yaml": [
+      "npm run oas:lint",
+      "npm run oas:format"
+    ],
+    "*.md": [
+      "npm run docs:lint"
+    ]
+  },
+  "homepage": "https://yui-semba-sample-mkdocs.netlify.app",
   "devDependencies": {
-    "@redocly/cli": "^1.34.0",
-    "@stoplight/prism-cli": "^5.12.0",
-    "@stoplight/spectral-cli": "^6.14.3",
-    "openapi-format": "^1.25.0",
-    "textlint": "^14.5.0",
+    "@redocly/cli": "^1.34.3",
+    "@stoplight/prism-cli": "^5.14.2",
+    "@stoplight/spectral-cli": "^6.15.0",
+    "husky": "^9.1.7",
+    "lint-staged": "^16.0.0",
+    "openapi-format": "^1.26.0",
+    "textlint": "^14.7.1",
     "textlint-filter-rule-allowlist": "^4.0.0",
     "textlint-filter-rule-comments": "^1.2.2",
-    "textlint-rule-preset-ja-technical-writing": "^12.0.2",
-    "widdershins": "^4.0.1"
+    "textlint-rule-preset-ja-technical-writing": "^12.0.2"
   }
 }

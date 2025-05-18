@@ -1,8 +1,9 @@
 #!/bin/bash
 set -euo pipefail
 
-# プロジェクトルートの絶対パスを取得
-ROOT_DIR=$(pwd)
+# スクリプト自体が存在するディレクトリの絶対パスを取得
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+ROOT_DIR="$SCRIPT_DIR"
 SRC_DIR="$ROOT_DIR/src"
 OUT_DIR="$ROOT_DIR/output"
 

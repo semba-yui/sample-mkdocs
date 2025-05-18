@@ -9,9 +9,7 @@
 
 ## IF 定義
 
-TODO: URL にすること
-
-[OpenAPI](../../interface/open-api/sample-oas.yaml)
+[OpenAPI](../../interface/open-api/index.html)
 
 ## シーケンス
 
@@ -25,7 +23,7 @@ TODO: URL にすること
 
 ### XXX取得処理
 
-○○のため、`XXX（テーブル名）` を検索する。  
+~のため、`XXX（テーブル名）` を検索する。  
 ここで取得したXXX情報は以降「 XXX情報」と呼称する。
 
 #### パラメータ一覧
@@ -46,7 +44,7 @@ TODO: URL にすること
 
 ### YYY取得処理
 
-○○のため、`YYY（テーブル名）` を検索する。  
+~のため、`YYY（テーブル名）` を検索する。  
 ここで取得したYYY情報は以降「 YYY情報」と呼称する。
 
 #### パラメータ一覧
