@@ -6,7 +6,7 @@
     "doc": "docs"
   },
   "scripts": {
-    "docs:build": "poetry run mkdocs build --clean",
+    "docs:build": "poetry run mkdocs build --clean --strict",
     "docs:lint": "textlint docs/**/*.md --ignore-path .textlintignore",
     "docs:serve": "poetry run mkdocs serve",
     "oas:build": "npx redocly build-docs ./docs/02_backend/interface/open-api/sample-oas.yaml -o ./docs/02_backend/interface/open-api/out/sample-oas.html",
